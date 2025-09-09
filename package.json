@@ -1,0 +1,32 @@
+{
+  "name": "bitcoin-wallet-descriptor-splitter",
+  "version": "1.0.0",
+  "description": "Split Bitcoin wallet descriptors into Shamir shares for secure backup",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "dev": "python3 -m http.server 8000"
+  },
+  "keywords": [
+    "bitcoin",
+    "wallet",
+    "descriptor",
+    "shamir",
+    "secret-sharing",
+    "backup",
+    "security",
+    "cryptography"
+  ],
+  "author": "Bitcoin Butlers",
+  "license": "MIT",
+  "repository": "git@github.com:Bitcoin-Butlers/ShamirSecrets.git",
+  "homepage": "https://bitcoin-butlers.github.io/shamir-secrets",
+  "bugs": {
+    "url": "https://github.com/Bitcoin-Butlers/ShamirSecrets/issues"
+  },
+  "dependencies": {
+    "secrets.js-grempe": "^2.0.0",
+    "qrcode": "^1.5.4",
+    "shamirs-secret-sharing": "^2.0.1"
+  }
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoin Wallet Descriptor Splitter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Bitcoin Wallet Descriptor Splitter</h1>
+            <p>Split your Bitcoin wallet descriptor into 3 Shamir shares for secure backup</p>
+        </header>
+
+        <main>
+            <section class="input-section">
+                <h2>Enter Wallet Descriptor</h2>
+                <div class="input-container">
+                    <textarea
+                        id="wallet-descriptor"
+                        placeholder="Enter your Bitcoin wallet descriptor here..."
+                        rows="3"></textarea>
+                    <button id="split-btn" class="btn btn-primary">Split into 3 Shares</button>
+                </div>
+            </section>
+
+            <section id="shares-section" class="shares-section hidden">
+                <h2>Your Shamir Shares</h2>
+                <p class="info-text">
+                    ⚠️ Keep these shares in separate, secure locations.
+                    You need at least 2 shares to reconstruct your wallet descriptor.
+                </p>
+
+                <div class="shares-grid">
+                    <!-- Share cards will be generated here -->
+                </div>
+
+                <div class="download-all-section">
+                    <button id="download-all-btn" class="btn btn-primary">
+                        📥 Download All Shares
+                    </button>
+                </div>
+            </section>
+
+            <section id="reconstruct-section" class="reconstruct-section">
+                <h2>Reconstruct Wallet Descriptor</h2>
+                <p class="info-text">
+                    🔄 Test that your shares work by reconstructing your wallet descriptor.
+                    You need at least 2 shares to reconstruct.
+                </p>
+
+                <div class="reconstruct-inputs">
+                    <div class="reconstruct-share-input">
+                        <label for="share1-input">Share:</label>
+                        <textarea id="share1-input" placeholder="Paste share 1 here..." rows="3"></textarea>
+                    </div>
+
+                    <div class="reconstruct-share-input">
+                        <label for="share2-input">Share:</label>
+                        <textarea id="share2-input" placeholder="Paste share 2 here..." rows="3"></textarea>
+                    </div>
+
+                </div>
+
+                <div class="reconstruct-actions">
+                    <button id="reconstruct-btn" class="btn btn-primary">
+                        🔄 Reconstruct Wallet Descriptor
+                    </button>
+                </div>
+
+                <div id="reconstructed-result" class="reconstructed-result hidden">
+                    <h3>Reconstructed Wallet Descriptor:</h3>
+                    <div class="reconstructed-content">
+                        <div id="reconstructed-text" class="reconstructed-text"></div>
+                        <div class="reconstructed-actions">
+                            <button id="copy-reconstructed-btn" class="btn btn-primary">
+                                📋 Copy to Clipboard
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>
+                Built with <a href="https://github.com/grempe/secrets.js" target="_blank">secrets.js</a> |
+                <a href="https://github.com/BlockchainCommons/Research/blob/master/papers/bcr-2020-011-shamir.md" target="_blank">Shamir's Secret Sharing</a>
+            </p>
+        </footer>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/secrets.js-grempe@2.0.0/secrets.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
